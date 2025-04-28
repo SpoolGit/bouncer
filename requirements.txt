@@ -1,0 +1,6 @@
+# python -m venv bouncer
+# bouncer\Scripts\activate
+# streamlit run main.py
+streamlit
+pdfplumber
+pandas
