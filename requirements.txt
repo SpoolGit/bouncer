@@ -1,6 +1,7 @@
 # python -m venv bouncer
 # bouncer\Scripts\activate
 # streamlit run main.py
+# netsh interface set interface "Wi-Fi" admin=disable
 streamlit
 pdfplumber
 pandas

@@ -22,7 +22,7 @@ def remove_evidence_file(idx):
     st.session_state.needs_rerun = True
     st.session_state.uploader_counter += 1   # force new uploader widget
 
-def show_page2():
+def show_page4():
     st.markdown("""
         <h1 style="
             color: #3A5EFF;
@@ -30,7 +30,7 @@ def show_page2():
             font-size: 2.8rem;
             font-weight: 600;
             margin-bottom: 0.5em;">
-            Bouncer: Your Audit Magician
+            Bouncer: Magician Needs more...
         </h1>
     """, unsafe_allow_html=True)
 
@@ -48,18 +48,11 @@ def show_page2():
     
     st.markdown("""
         <p style="font-size: 1.5rem; font-weight: 400; color: #3A5EFF;">
-            You can start with just uploading Trial Balance and Revenue split-up for example
+            Please upload precisely what Bouncer has asked for
         </p>
     """, unsafe_allow_html=True)
 
-    # Upload Trial Balance
-    uploaded_trial_balance = st.file_uploader(
-        "Upload Trial Balance", 
-        type=["xlsx", "csv"], 
-        key=f"trial_balance_upload_{st.session_state.uploader_counter}"  # dynamic key
-    )
-    if uploaded_trial_balance:
-        st.session_state.trial_balance_file = uploaded_trial_balance
+    
 
     # Upload Evidence Doc 1
     uploaded_evidence_doc1 = st.file_uploader(
@@ -123,19 +116,19 @@ def show_page2():
 
     def go_back():
         st.session_state.page = 1
-        st.session_state.selection = "Welcome"
-        st.session_state.page_reroute = True
-
-    def go_next():
-        st.session_state.page = 3
         st.session_state.selection = "Magic"
         st.session_state.page_reroute = True
 
+    def go_next():
+        st.session_state.page = 5
+        st.session_state.selection = "Assertion Verdict"
+        st.session_state.page_reroute = True
+
     with col1:
-        st.button("⬅️ Back", key="page2_back", on_click=go_back)
+        st.button("⬅️ Back", key="page4_back", on_click=go_back)
 
     with col2:
-        st.button("Next ➡️", key="page2_next", on_click=go_next)
+        st.button("Next ➡️", key="page4_next", on_click=go_next)
 
     if st.session_state.get("page_reroute"):
         st.session_state.page_reroute = False

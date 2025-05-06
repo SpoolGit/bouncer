@@ -1,18 +1,50 @@
 import streamlit as st
-
 def show_page1():
-    st.title("User Information")
+    st.image("data/logo_full.png", use_container_width=True)
 
-    if 'user_info' not in st.session_state:
-        st.session_state.user_info = {}
+    st.markdown("""
+        <style>
+            .btn-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+            .try-btn {
+                background-color: #f4cd59;
+                color: black;
+                font-size: 1.5rem;
+                font-style: italic;
+                font-family: 'Segoe UI', sans-serif;
+                padding: 0.75rem 2rem;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .try-btn:hover {
+                background-color: #eec944;
+            }
+        </style>
+    """, unsafe_allow_html=True)
 
-    st.session_state.user_info['name'] = st.text_input("Name", st.session_state.user_info.get('name', ''))
-    st.session_state.user_info['email'] = st.text_input("Email", st.session_state.user_info.get('email', ''))
-    st.session_state.user_info['address'] = st.text_area("Address", st.session_state.user_info.get('address', ''))
-    st.session_state.user_info['company_info'] = st.text_area("Company Info", st.session_state.user_info.get('company_info', ''))
-    st.session_state.user_info['company_domain'] = st.selectbox("Company Domain", ["Technology", "Finance", "Healthcare", "Other"], index=["Technology", "Finance", "Healthcare", "Other"].index(st.session_state.user_info.get('company_domain', 'Technology')))
+    st.markdown("<br>", unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 1])
+    def go_back():
+        st.session_state.page = 1
+        st.session_state.selection = "Welcome"
+        st.session_state.page_reroute = True
 
-    if st.session_state.user_info.get('name') and st.session_state.user_info.get('email'):
-        st.success("User information saved successfully. You can now navigate to other pages.")
-    else:
-        st.info("Please fill in the Name and Email fields to access other pages.")
+    def go_next():
+        st.session_state.page = 3
+        st.session_state.selection = "Document Upload"
+        st.session_state.page_reroute = True
+
+
+    with col2:
+        st.button("Try it ➡️", key="page1_next", on_click=go_next)
+
+    if st.session_state.get("page_reroute"):
+        st.session_state.page_reroute = False
+        st.rerun()
+
+
