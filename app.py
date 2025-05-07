@@ -13,7 +13,18 @@ from page7 import show_page7
 from uInfo import show_uInfo
 
 #from page4_audit_inputs import show_page4
-
+params = st.query_params
+if "page" in params:
+    if params["page"] == "pg1":
+        st.session_state.page = 1
+        st.session_state.selection = "Welcome"
+    elif params["page"] == "pg2":
+        st.session_state.page = 2
+        st.session_state.selection = "Document Upload"
+    elif params["page"] == "pg6":
+        st.session_state.page = 6
+        st.session_state.selection = "IFRS 15 Analysis"
+        
 # Initialize routing state
 if "page" not in st.session_state:
     st.session_state.page = None  # for programmatic routing
