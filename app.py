@@ -17,23 +17,35 @@ params = st.query_params
 if "page" in params:
     if params["page"] == "pg1":
         st.session_state.page = 1
-        st.session_state.selection = "Welcome"
+        #st.session_state.selection = "Welcome"
     elif params["page"] == "pg2":
         st.session_state.page = 2
-        st.session_state.selection = "Document Upload"
+        #st.session_state.selection = "Document Upload"
+    elif params["page"] == "pg3":
+        st.session_state.page = 3
+        #st.session_state.selection = "Magic"
+    elif params["page"] == "pg4":
+        st.session_state.page = 4
+        #st.session_state.selection = "Supplementary Upload"
+    elif params["page"] == "pg5":
+        st.session_state.page = 5
+        #st.session_state.selection = "Assertion Verdict"
     elif params["page"] == "pg6":
         st.session_state.page = 6
-        st.session_state.selection = "IFRS 15 Analysis"
+        #st.session_state.selection = "IFRS 15 Analysis"
+    elif params["page"] == "pg7":
+        st.session_state.page = 7
+        #st.session_state.selection = "IFRS 15 Verdict"
         
 # Initialize routing state
 if "page" not in st.session_state:
     st.session_state.page = None  # for programmatic routing
 
 if "selection" not in st.session_state:
-    st.session_state.selection = "Welcome"  # sidebar default
+    st.session_state.selection = "Document Upload"  # sidebar default
 
 if "active_selection" not in st.session_state:
-    st.session_state.active_selection = "Welcome"  # track user change
+    st.session_state.active_selection = "Document Upload"  # track user change
 
 def main():
 

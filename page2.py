@@ -30,7 +30,7 @@ def show_page2():
             font-size: 2.8rem;
             font-weight: 600;
             margin-bottom: 0.5em;">
-            Bouncer: Your Audit Magician
+            Bouncer: Audit Revenue Account 
         </h1>
     """, unsafe_allow_html=True)
 
@@ -42,15 +42,15 @@ def show_page2():
 
     # NEW: Initialize uploader_counter if not present
     if 'uploader_counter' not in st.session_state:
-        st.session_state.uploader_counter = 0
-
-    st.subheader("Upload Files:")
+        st.session_state.uploader_counter = 0  
     
     st.markdown("""
         <p style="font-size: 1.5rem; font-weight: 400; color: #3A5EFF;">
             You can start with just uploading Trial Balance and Revenue split-up for example
         </p>
     """, unsafe_allow_html=True)
+    
+    st.subheader("Upload Files:")
 
     # Upload Trial Balance
     uploaded_trial_balance = st.file_uploader(
