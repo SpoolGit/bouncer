@@ -115,8 +115,8 @@ def show_page6():
     col1, col2 = st.columns([1, 1])
 
     def go_back():
-        st.session_state.page = 1
-        st.session_state.selection = "Welcome"
+        st.session_state.page = 5
+        st.session_state.selection = "Assertion Verdict"
         st.session_state.page_reroute = True
 
     def go_next():

@@ -145,12 +145,20 @@ def show_page5():
 
     def go_back():
         st.session_state.page = 4
-        st.session_state.selection = "Supplementary Upload"  # hypothetical next section
+        st.session_state.selection = "Supplementary Upload"  
+        st.session_state.page_reroute = True
+        
+    def go_next():
+        st.session_state.page = 6
+        st.session_state.selection = "IFRS 15 Analysis"
         st.session_state.page_reroute = True
 
     with col1:
         st.button("⬅️ Back", key="page5_back", on_click=go_back)
  
+    with col2:
+        st.button("Next ➡️", key="page5_next", on_click=go_next)
+
 
     if st.session_state.get("page_reroute"):
         st.session_state.page_reroute = False
