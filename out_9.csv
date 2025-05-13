@@ -1,42 +1,42 @@
-### Trial Balance
+### Re-Created Trial Balance
 ```
-Account Name,Debit (GBP),Credit (GBP)
-Revolut $,50.00,58.37
-Revolut Business Account,56438.57,56438.57
-Accounts Receivable,110292.00,110292.00
-Office Equipment,899.00,299.66
-Due to HMRC - Income Tax (Employee),15010.00,15010.00
-Due to HMRC - PAYE (Employee),7000.00,7000.00
-Due to HMRC - PAYE (Employer),14468.00,14468.00
-Hadi Radwan,17612.33,17612.33
-Laura Bechir,10270.80,10270.80
-Shareholder Loan,430.00,13000.00
-Pension,730.80,730.80
-Consulting Income,974.30,974.30
-Accounting Fees,1563.60,1563.60
-Bank Service Charges,90.00,90.00
-Cleaning Expenses,2460.00,2460.00
-Computer – Internet,9.44,0.00
-Depreciation Expense,299.66,0.00
-Dues & Subscriptions,300.00,0.00
-Education & Training,1067.00,0.00
-Insurance - Health,5393.80,0.00
-Meals and Entertainment,2000.00,0.00
-Office Supplies,11.70,0.00
-Rent Expense,15476.20,0.00
-Repairs & Maintenance,30.80,0.00
-Shipping Cost,89.85,0.00
-Taxi,1000.00,0.00
-Telephone – Wireless,140.00,0.00
-Travel Expense,1495.20,0.00
-Utilities,1000.00,0.00
-Paypal Fees,10.70,0.00
-Podcast Editing,965.63,0.00
-Raw Materials,300.00,9.99
-Payroll - Pension Fees,500.00,0.00
-Payroll – Employer's Share of Benefits,7000.00,0.00
-Payroll – Salary & Wages,100000.00,0.00
-Loss on Foreign Exchange,0.00,0.20
+Account Name,Opening Balance,Total Debit,Total Credit,Ending Balance
+accounting fees,350.60,1563.60,30.00,1884.20
+accounts receivable,0.00,174748.00,174748.00,0.00
+bank service charges,30.00,105.00,0.00,135.00
+cleaning expenses,728.58,2765.01,0.00,3493.59
+computer – internet,0.00,9.44,0.00,9.44
+consulting income,27406.35,485.00,175891.64,-147000.29
+depreciation expense,0.00,299.66,0.00,299.66
+due to hmrc - income tax (employee),0.00,28984.84,28984.84,0.00
+due to hmrc - paye (employee),0.00,6474.50,6474.50,0.00
+due to hmrc - paye (employer),0.00,15362.80,15362.80,0.00
+dues & subscriptions,69.08,694.13,0.00,763.21
+education & training,0.00,1067.00,0.00,1067.00
+hadi radwan,-9940.03,60895.66,56008.45,-6052.82
+insurance - health,539.38,6161.13,0.00,6700.51
+laura bechir,0.00,37291.16,37291.16,0.00
+loss on foreign exchange,0.37,0.00,0.20,0.17
+meals and entertainment,113.80,4872.49,0.00,4986.29
+office equipment,0.00,899.00,299.66,599.34
+office supplies,73.80,67.20,0.00,141.00
+paypal fees,0.00,10.70,0.00,10.70
+payroll - pension fees,268.80,433.20,0.00,702.00
+payroll – employer's share of benefits,1927.60,15362.80,0.00,17290.40
+payroll – salary & wages,17000.00,128000.00,0.00,145000.00
+pension,-243.60,974.40,730.80, -0.00
+podcast editing,0.00,926.55,0.00,926.55
+raw materials,64.58,358.80,9.99,413.39
+rent expense,4103.24,15476.20,0.00,19579.44
+repairs & maintenance,0.00,30.80,0.00,30.80
+revolut $,21.91,50.00,56.54,15.37
+revolut business account,4782.06,177420.93,167050.73,147152.26
+shareholder loan,1628.68,430.00,23038.92,-21180.24
+shipping cost,0.00,89.85,0.00,89.85
+taxi,0.00,1220.37,0.00,1220.37
+telephone – wireless,21.42,131.94,0.00,153.36
+travel expense,0.00,1495.20,0.00,1495.20
+utilities,81.68,820.87,0.00,902.55
 ```
 
 ### Account Classification Table
