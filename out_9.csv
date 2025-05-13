@@ -1,0 +1,132 @@
+### Trial Balance
+```
+Account Name,Debit (GBP),Credit (GBP)
+Revolut $,50.00,58.37
+Revolut Business Account,56438.57,56438.57
+Accounts Receivable,110292.00,110292.00
+Office Equipment,899.00,299.66
+Due to HMRC - Income Tax (Employee),15010.00,15010.00
+Due to HMRC - PAYE (Employee),7000.00,7000.00
+Due to HMRC - PAYE (Employer),14468.00,14468.00
+Hadi Radwan,17612.33,17612.33
+Laura Bechir,10270.80,10270.80
+Shareholder Loan,430.00,13000.00
+Pension,730.80,730.80
+Consulting Income,974.30,974.30
+Accounting Fees,1563.60,1563.60
+Bank Service Charges,90.00,90.00
+Cleaning Expenses,2460.00,2460.00
+Computer – Internet,9.44,0.00
+Depreciation Expense,299.66,0.00
+Dues & Subscriptions,300.00,0.00
+Education & Training,1067.00,0.00
+Insurance - Health,5393.80,0.00
+Meals and Entertainment,2000.00,0.00
+Office Supplies,11.70,0.00
+Rent Expense,15476.20,0.00
+Repairs & Maintenance,30.80,0.00
+Shipping Cost,89.85,0.00
+Taxi,1000.00,0.00
+Telephone – Wireless,140.00,0.00
+Travel Expense,1495.20,0.00
+Utilities,1000.00,0.00
+Paypal Fees,10.70,0.00
+Podcast Editing,965.63,0.00
+Raw Materials,300.00,9.99
+Payroll - Pension Fees,500.00,0.00
+Payroll – Employer's Share of Benefits,7000.00,0.00
+Payroll – Salary & Wages,100000.00,0.00
+Loss on Foreign Exchange,0.00,0.20
+```
+
+### Account Classification Table
+```
+Account Name,Classification
+Revolut $,Current Asset
+Revolut Business Account,Current Asset
+Accounts Receivable,Current Asset
+Office Equipment,Non-Current Asset
+Due to HMRC - Income Tax (Employee),Current Liability
+Due to HMRC - PAYE (Employee),Current Liability
+Due to HMRC - PAYE (Employer),Current Liability
+Hadi Radwan,Equity
+Laura Bechir,Equity
+Shareholder Loan,Non-Current Liability
+Pension,Current Liability
+Consulting Income,Retained Earnings
+Accounting Fees,Retained Earnings
+Bank Service Charges,Retained Earnings
+Cleaning Expenses,Retained Earnings
+Computer – Internet,Retained Earnings
+Depreciation Expense,Retained Earnings
+Dues & Subscriptions,Retained Earnings
+Education & Training,Retained Earnings
+Insurance - Health,Retained Earnings
+Meals and Entertainment,Retained Earnings
+Office Supplies,Retained Earnings
+Rent Expense,Retained Earnings
+Repairs & Maintenance,Retained Earnings
+Shipping Cost,Retained Earnings
+Taxi,Retained Earnings
+Telephone – Wireless,Retained Earnings
+Travel Expense,Retained Earnings
+Utilities,Retained Earnings
+Paypal Fees,Retained Earnings
+Podcast Editing,Retained Earnings
+Raw Materials,Retained Earnings
+Payroll - Pension Fees,Retained Earnings
+Payroll – Employer's Share of Benefits,Retained Earnings
+Payroll – Salary & Wages,Retained Earnings
+Loss on Foreign Exchange,Retained Earnings
+```
+
+### Generated Balance Sheet
+```
+Category,Account Name,Amount (GBP)
+Assets,Current Assets,166780.57
+Assets,Revolut $,50.00
+Assets,Revolut Business Account,56438.57
+Assets,Accounts Receivable,110292.00
+Assets,Non-Current Assets,899.00
+Assets,Office Equipment,899.00
+Liabilities,Current Liabilities,37208.80
+Liabilities,Due to HMRC - Income Tax (Employee),15010.00
+Liabilities,Due to HMRC - PAYE (Employee),7000.00
+Liabilities,Due to HMRC - PAYE (Employer),14468.00
+Liabilities,Pension,730.80
+Liabilities,Non-Current Liabilities,13000.00
+Liabilities,Shareholder Loan,13000.00
+Equity,Equity,117470.77
+Equity,Hadi Radwan,17612.33
+Equity,Laura Bechir,10270.80
+Equity,Retained Earnings,89487.64
+```
+
+### Variance Analysis Table
+```
+Account Name,Prior Year Debit,Prior Year Credit,Current Year Debit,Current Year Credit,Debit Variance,Credit Variance
+Cash on Hand,10.62,0.00,0.00,0.00,-10.62,0.00
+Revolut $,21.91,0.00,50.00,58.37,28.09,58.37
+Revolut Business Account,4782.06,0.00,56438.57,56438.57,51656.51,56438.57
+Hadi Radwan,0.00,9940.03,17612.33,17612.33,17612.33,7672.30
+Pension,0.00,243.60,730.80,730.80,730.80,487.20
+Shareholder Loan,0.00,1628.68,430.00,13000.00,430.00,11371.32
+Common Shares,0.00,100.00,0.00,0.00,0.00,-100.00
+Profit for all prior years,9131.88,0.00,0.00,0.00,-9131.88,0.00
+Consulting Income,0.00,27406.35,974.30,974.30,974.30,-26432.05
+Gain on Foreign Exchange,0.00,0.37,0.00,0.20,0.00,-0.17
+Accounting Fees,350.60,0.00,1563.60,1563.60,1213.00,1563.60
+Bank Service Charges,30.00,0.00,90.00,90.00,60.00,90.00
+Cleaning Expenses,728.58,0.00,2460.00,2460.00,1731.42,2460.00
+Dues & Subscriptions,69.08,0.00,300.00,0.00,230.92,0.00
+Insurance - Health,539.38,0.00,5393.80,0.00,4854.42,0.00
+Meals and Entertainment,113.80,0.00,2000.00,0.00,1886.20,0.00
+Office Supplies,73.80,0.00,11.70,0.00,-62.10,0.00
+Payroll - Pension Fees,268.80,0.00,500.00,0.00,231.20,0.00
+Payroll – Employer's Share of Benefits,1927.60,0.00,7000.00,0.00,5072.40,0.00
+Payroll – Salary & Wages,17000.00,0.00,100000.00,0.00,83000.00,0.00
+Raw Materials,64.58,0.00,300.00,9.99,235.42,9.99
+Rent Expense,4103.24,0.00,15476.20,0.00,11372.96,0.00
+Telephone – Wireless,21.42,0.00,140.00,0.00,118.58,0.00
+Utilities,81.68,0.00,1000.00,0.00,918.32,0.00
+```

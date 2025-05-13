@@ -10,6 +10,8 @@ from page4 import show_page4
 from page5 import show_page5
 from page6 import show_page6
 from page7 import show_page7
+from page8 import show_page8
+from page9 import show_page9
 from uInfo import show_uInfo
 
 #from page4_audit_inputs import show_page4
@@ -50,7 +52,7 @@ if "active_selection" not in st.session_state:
 def main():
 
     # Sidebar radio
-    sidebar_options = ["Welcome", "Document Upload", "Magic", "Supplementary Upload", "Assertion Verdict", "IFRS 15 Analysis", "IFRS 15 Verdict"]
+    sidebar_options = ["Welcome", "Document Upload", "Magic", "Supplementary Upload", "Assertion Verdict", "IFRS 15 Analysis", "IFRS 15 Verdict", "TB Re-generation", "TB-Regen O/P"]
     selection = st.sidebar.radio(
         "Go to",
         sidebar_options,
@@ -90,6 +92,12 @@ def main():
         elif st.session_state.page == 7:
             st.session_state.selection = None
             show_page7()
+        elif st.session_state.page == 8:
+            st.session_state.selection = None
+            show_page8()
+        elif st.session_state.page == 9:
+            st.session_state.selection = None
+            show_page9()
     else:
         # Manual sidebar routing
         if st.session_state.selection == "Welcome":
@@ -111,6 +119,10 @@ def main():
             show_page6()
         elif st.session_state.selection == "IFRS 15 Verdict":
             show_page7()
+        elif st.session_state.selection == "TB Re-generation":
+            show_page8()
+        elif st.session_state.selection == "TB-Regen O/P":
+            show_page9()
         #elif st.session_state.selection == "Audit Inputs":
         #    show_page4()
 
