@@ -50,7 +50,7 @@ if "active_selection" not in st.session_state:
     st.session_state.active_selection = "Document Upload"  # track user change
 
 def main():
-
+    st.sidebar.markdown("### 🧭 Navigation")
     # Sidebar radio
     sidebar_options = ["Welcome", "Document Upload", "Magic", "Supplementary Upload", "Assertion Verdict", "IFRS 15 Analysis", "IFRS 15 Verdict", "TB Re-generation", "TB-Regen O/P"]
     selection = st.sidebar.radio(
@@ -59,7 +59,7 @@ def main():
         index=sidebar_options.index(st.session_state.selection),
         key="selection"
     )
-
+    
     # Detect manual user change
     if st.session_state.selection != st.session_state.active_selection:
         st.session_state.page = None
