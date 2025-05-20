@@ -32,3 +32,6 @@ def display_csv(csv_path: str):
     if st.button("⬅️ Back to Stats View"):
         st.session_state.page = 'stats'
         st.rerun()
+    if st.button("📤 Go to Upload Page"):
+        st.session_state.page = 'upload'
+        st.rerun()
