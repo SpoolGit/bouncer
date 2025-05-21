@@ -256,7 +256,23 @@ def get_stats_csv ():
 
     return df
     
+# Fix the malformed lines by quoting the 4th field if it contains comma
+def fix_csv_text(csv_text):
+    fixed_lines = []
+    lines = csv_text.strip().split('\n')
+    header = lines[0]
+    fixed_lines.append(header)
 
+    for line in lines[1:]:
+        parts = line.split(',')
+        if len(parts) > 6:
+            # Fixing by assuming 4th field may contain commas
+            fixed_line = ','.join(parts[:3] + ['"' + ','.join(parts[3:-2]).strip() + '"'] + parts[-2:])
+            fixed_lines.append(fixed_line)
+        else:
+            fixed_lines.append(line)
+    return '\n'.join(fixed_lines)
+    
 def get_llm_sampling_csv ():
     
     try:
@@ -343,7 +359,9 @@ def get_llm_sampling_csv ():
             temperature=0,
         )
         stage1_response_message = chat_completion.choices[0].message.content
-        df_llm = pd.read_csv(StringIO(stage1_response_message))
+        fixed_csv = fix_csv_text(stage1_response_message)
+        df_llm = pd.read_csv(StringIO(fixed_csv))
+        
         
         #st.session_state["sampling_LLM_df"] = df_llm
         ##st.info(stage1_response_message)
