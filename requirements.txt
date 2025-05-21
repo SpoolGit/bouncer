@@ -5,3 +5,10 @@
 streamlit
 pdfplumber
 pandas
+numpy 
+scikit-learn 
+scipy
+openai
+holidays 
+matplotlib 
+seaborn

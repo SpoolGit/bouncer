@@ -2,7 +2,8 @@
 import streamlit as st
 import pandas as pd
 
-def display_sampling_upload(csv_path: str):
+def display_sampling_upload():
+    csv_path = "outputs/unusual-n-sampling.csv"
     st.markdown("<h1 style='text-align: center;'>📤 Upload Supporting Files for Sampling</h1>", unsafe_allow_html=True)
     st.markdown("---")
 
