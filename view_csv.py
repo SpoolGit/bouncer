@@ -13,15 +13,18 @@ def display_csv():
             df = get_llm_sampling_csv()
             st.session_state["llm_sampling_df"] = df
     
-    if st.button("📤 Go to Upload Page", key="view_upload_btn_1"):
-        st.session_state.page = 'upload'
-        st.rerun()
-
     df = st.session_state["llm_sampling_df"]
     if not isinstance(df, pd.DataFrame) or df.empty:
         st.info("DF not found...")
         df = pd.DataFrame() 
+        if st.button("⬅️ Back to Stats View", key="view_stats_btn_1"):
+            st.session_state.page = 'stats'
+            st.rerun()
         return
+    
+    if st.button("📤 Go to Upload Page", key="view_upload_btn_1"):
+        st.session_state.page = 'upload'
+        st.rerun()
         
     # Normalize booleans
     df['Is High Risk?'] = df['Is High Risk?'].astype(str).str.upper() == "TRUE"

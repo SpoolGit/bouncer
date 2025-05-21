@@ -30,7 +30,7 @@ def display_sampling_upload():
             uploaded_file = st.file_uploader(
                 label="Upload supporting document (PDF, CSV, Excel, DOCX)",
                 type=["pdf", "csv", "xlsx", "docx"],
-                key=f"file_{desc_key}"
+                key=f"file_{desc_key}_{idx}"
             )
             if uploaded_file:
                 st.session_state[f"uploaded_{desc_key}"] = uploaded_file
