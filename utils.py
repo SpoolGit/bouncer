@@ -332,12 +332,21 @@ def get_llm_sampling_csv ():
             },
         ]
 
-        #print(final_prompt) 
-        time.sleep(5) 
-        csv_path = "outputs/unusual-n-sampling.csv"  
-        df_llm = pd.read_csv(csv_path)
+        ##print(final_prompt) 
+        #time.sleep(5) 
+        #csv_path = "outputs/unusual-n-sampling.csv"  
+        #df_llm = pd.read_csv(csv_path)        
+        ## Call OpenAI's API
+        chat_completion = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=messages_1,
+            temperature=0,
+        )
+        stage1_response_message = chat_completion.choices[0].message.content
+        df_llm = pd.read_csv(StringIO(stage1_response_message))
         
         #st.session_state["sampling_LLM_df"] = df_llm
+        ##st.info(stage1_response_message)
         return df_llm
         #print("Response: ", stage1_response_message)
     
