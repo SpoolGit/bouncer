@@ -190,12 +190,12 @@ def get_stats_csv ():
     # Dynamically find debit and credit columns
     debit_col = [col for col in df.columns if 'debit' in col.lower()][0]
     credit_col = [col for col in df.columns if 'credit' in col.lower()][0]
-    balance_col = [col for col in df.columns if 'balance' in col.lower()][0]
+    #balance_col = [col for col in df.columns if 'balance' in col.lower()][0]
 
     # Clean and convert values
     df['debit_clean'] = pd.to_numeric(df[debit_col].replace('[£,]', '', regex=True), errors='coerce')
     df['credit_clean'] = pd.to_numeric(df[credit_col].replace('[£,]', '', regex=True), errors='coerce')
-    df['balance_clean'] = pd.to_numeric(df[balance_col].replace('[£,]', '', regex=True), errors='coerce')
+    #df['balance_clean'] = pd.to_numeric(df[balance_col].replace('[£,]', '', regex=True), errors='coerce')
 
     # Compute Amount column
     df['Amount'] = df['debit_clean'].fillna(0) + df['credit_clean'].fillna(0)
@@ -250,7 +250,7 @@ def get_stats_csv ():
 
     df = df.drop(debit_col, axis=1)
     df = df.drop(credit_col, axis=1)
-    df = df.drop(balance_col, axis=1)
+    #df = df.drop(balance_col, axis=1)
     df = df.drop('K_means Cluster', axis=1)
     st.session_state["stats_df"] = df
 
