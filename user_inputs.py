@@ -2,7 +2,7 @@
 import streamlit as st
 
 def user_inputs():
-     
+    
 
     st.markdown("""
         <style>
@@ -13,7 +13,16 @@ def user_inputs():
         }
         </style>
     """, unsafe_allow_html=True)
-
+    
+    
+    st.markdown("""
+    <div style='border-left: 6px solid #f1c40f; padding: 10px 15px; background-color: #fff3cd; color: #856404; font-weight: bold;'>
+    ⚠️ Please make sure your CSV has at least these columns:<br>
+    ACCOUNT NUMBER, DATE, DESCRIPTION, DEBIT, CREDIT <br>
+    CSV file should not contain any other data beside the GL entries.
+    </div>
+    """, unsafe_allow_html=True)
+    
     st.title("Please add below inputs")
     
 
