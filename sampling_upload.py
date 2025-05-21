@@ -3,13 +3,25 @@ import streamlit as st
 import pandas as pd
 
 def display_sampling_upload():
-    csv_path = "outputs/unusual-n-sampling.csv"
+
     st.markdown("<h1 style='text-align: center;'>📤 Upload Supporting Files for Sampling</h1>", unsafe_allow_html=True)
     st.markdown("---")
 
-    df = pd.read_csv(csv_path)
+    #csv_path = "outputs/unusual-n-sampling.csv"
+    #df = pd.read_csv(csv_path)
+    df = st.session_state["llm_sampling_df"]
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        st.info("DF not found...")
+        df = pd.DataFrame() 
+        return
+    
+    
     df['Is selected for Sampling'] = df['Is selected for Sampling'].astype(str).str.upper() == "TRUE"
-
+           
+    if st.button("➡️ View Assetion Verdict", key="view_assert_1"):
+        st.session_state.page = 'as_verdict'
+        st.rerun()
+        
     sampled_df = df[df['Is selected for Sampling']]
 
     for idx, row in sampled_df.iterrows():
@@ -27,4 +39,8 @@ def display_sampling_upload():
     st.markdown("---")
     if st.button("⬅️ Back to Risk View"):
         st.session_state.page = 'view'
+        st.rerun()
+        
+    if st.button("➡️ View Assetion Verdict"):
+        st.session_state.page = 'as_verdict'
         st.rerun()
