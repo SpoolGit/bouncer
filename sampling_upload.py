@@ -1,46 +1,56 @@
 # sampling_upload.py
 import streamlit as st
 import pandas as pd
+#from utils import get_assertOccurrence_LLM
 
 def display_sampling_upload():
 
-    st.markdown("<h1 style='text-align: center;'>📤 Upload Supporting Files for Sampling</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>📄 Upload Supporting Files for Sampling</h1>", unsafe_allow_html=True)
+    st.subheader("Occurrence & Accuracy Assertsion")
     st.markdown("---")
 
-    #csv_path = "outputs/unusual-n-sampling.csv"
-    #df = pd.read_csv(csv_path)
-    df = st.session_state["llm_sampling_df"]
+    df = st.session_state.get("llm_sampling_df", pd.DataFrame())
     if not isinstance(df, pd.DataFrame) or df.empty:
         st.info("DF not found...")
-        df = pd.DataFrame() 
         return
-    
-    
+
     df['Is selected for Sampling'] = df['Is selected for Sampling'].astype(str).str.upper() == "TRUE"
-           
-    if st.button("➡️ View Assetion Verdict", key="view_assert_1"):
-        st.session_state.page = 'as_verdict'
-        st.rerun()
-        
     sampled_df = df[df['Is selected for Sampling']]
 
+
     for idx, row in sampled_df.iterrows():
+        desc_key = row['DESCRIPTION'].replace(" ", "_").replace("/", "_").replace("\\", "_")
+        row_key = f"row_{desc_key}_{idx}"
+
         with st.expander(f"📌 {row['DESCRIPTION']} ({row['DATE']}) - £{row['AMOUNT']:.2f}"):
-            desc_key = row['DESCRIPTION'].replace(" ", "_")
-            uploaded_file = st.file_uploader(
-                label="Upload supporting document (PDF, CSV, Excel, DOCX)",
+            uploaded_files = st.file_uploader(
+                label="Upload supporting documents (PDF, CSV, Excel, DOCX)",
                 type=["pdf", "csv", "xlsx", "docx"],
-                key=f"file_{desc_key}_{idx}"
+                key=f"file_{row_key}",
+                accept_multiple_files=True
             )
-            if uploaded_file:
-                st.session_state[f"uploaded_{desc_key}"] = uploaded_file
-                st.success("✅ File uploaded and saved.")
+
+            # Save uploads in session state under a list per row
+            if uploaded_files:
+                st.session_state[f"uploaded_{row_key}"] = uploaded_files
+                st.success(f"✅ {len(uploaded_files)} file(s) uploaded and saved.")
+
+            # Action button per row
+
+            if st.button(f"⚖️ Run Assertions for {desc_key}", key=f"check_{row_key}"):
+                if not uploaded_files:
+                    st.warning("⚠️ Please upload at least one file before running the check.")
+                else:
+                    st.session_state["selected_description"] = row["DESCRIPTION"]
+                    st.session_state["selected_date"] = row["DATE"]
+                    st.session_state["selected_row_key"] = row_key
+
+                    st.session_state.page = 'as_verdict'
+                    st.rerun()
 
     st.markdown("---")
+
     if st.button("⬅️ Back to Risk View"):
         st.session_state.page = 'view'
         st.rerun()
-        
-    if st.button("➡️ View Assetion Verdict"):
-        st.session_state.page = 'as_verdict'
-        st.rerun()
+

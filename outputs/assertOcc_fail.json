@@ -1,0 +1,16 @@
+{
+  "invoices": [
+    {
+      "file_name": "Invoice_87_2025-04-30.pdf",
+      "subtotal_before_vat": 100000.00,
+      "total_after_vat": 100000.00,
+      "customer_name": "Blox Tech Solution FZ-LLC",
+      "does_subtotal_match": false,
+      "does_total_match": false,
+      "matched_amount_type": "none",
+      "amount_difference": 92000.00,
+      "does_customer_match": true
+    }
+  ],
+  "bank_statements": []
+}

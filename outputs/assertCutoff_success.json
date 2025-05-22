@@ -1,0 +1,12 @@
+{
+  "invoice_date_checks": [
+    {
+      "file_name": "Invoice_87_2025-04-30.pdf",
+      "extracted_invoice_date": "2025-04-23",
+      "does_invoice_date_match_exact": true,
+      "is_same_month": true,
+      "is_cutoff_issue": false,
+      "cutoff_issue_description": null
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿,DATE,DESCRIPTION,AMOUNT,Anomaly Flags,Is High Risk?,Is selected for Sampling
+0,2024-12-02,Blox Tech Solution FZ-LLC - 78 - Consulting Income,4000,,false,false
+1,2024-12-02,Blox Tech Solution FZ-LLC - 78 - Out-of-pocket Expenses,658,,false,false
+2,2024-12-02,Blox Tech Solution FZ-LLC - 79 - Consulting Income,8000,,false,false
+3,2024-12-19,Consulting Income _ Alex,500,,false,false
+4,2025-01-11,Blox Tech Solution FZ-LLC - 80 - Consulting Income,8000,Date in future Weekend,true,true
+5,2025-01-11,Blox Tech Solution FZ-LLC - 81 - Consulting Income,4000,Date in future Weekend,true,false
+6,2025-01-11,Blox Tech Solution FZ-LLC - 81 - Out-of-pocket Expenses,1700,Date in future Weekend,true,false
+7,2025-02-20,Blox Tech Solution FZ-LLC - 82 - Consulting Income,4000,,false,false
+8,2025-02-20,Blox Tech Solution FZ-LLC - 82 - Out-of-pocket Expenses,2055,,false,false
+9,2025-02-20,Blox Tech Solution FZ-LLC - 83 - Consulting Income,8000,,false,false
+10,2025-02-26,Blox Tech Solution FZ-LLC - 84 - Consulting Income,10609.96,,false,false
+11,2025-03-15,Blox Tech Solution FZ-LLC - 85 - Consulting Income,8052.91,Weekend,true,false
+12,2025-03-15,Blox Tech Solution FZ-LLC - 86 - Consulting Income,6000,Weekend,true,false
+13,2025-03-15,Blox Tech Solution FZ-LLC - 86 - Out-of-pocket Expenses,2270,Weekend,true,false
+14,2025-04-23,Blox Tech Solution FZ-LLC - 87 - Consulting Income,100000,Z_score above threshold Large transaction,true,true

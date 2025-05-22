@@ -1,0 +1,206 @@
+DATE,DESCRIPTION,AMOUNT,Anomaly Flags,Is High Risk?,Is selected for Sampling
+2024-01-01,Starting Balance,0.00,,FALSE,FALSE
+2024-01-13,Ishbilia meeting,58.22,Weekend,TRUE,FALSE
+2024-01-18,Cogs from Amazon,52.40,,FALSE,FALSE
+2024-03-10,Cogs from Amazon,30.73,Weekend,TRUE,FALSE
+2024-03-15,Client Dinner,120.00,Z_score above threshold Rounded True,TRUE,TRUE
+2024-03-15,Cogs from Amazon,27.98,,FALSE,FALSE
+2024-03-22,Lunch,17.33,,FALSE,FALSE
+2024-03-29,Lunch,24.19,,FALSE,FALSE
+2024-03-30,Lunch,15.99,Weekend,TRUE,FALSE
+2024-04-02,Lunch,14.74,,FALSE,FALSE
+2024-04-04,Podcast Invite,80.69,,FALSE,FALSE
+2024-04-06,Lunch,21.00,Rounded True Weekend,TRUE,FALSE
+2024-04-11,Lunch (2x),29.41,,FALSE,FALSE
+2024-04-11,Lunch,7.48,,FALSE,FALSE
+2024-04-13,Podcast Lunch,21.82,Weekend,TRUE,FALSE
+2024-04-13,Client Meeting,9.00,Rounded True Weekend,TRUE,FALSE
+2024-04-20,Work Dinner,53.99,Weekend,TRUE,FALSE
+2024-04-20,Work Lunch,7.75,,FALSE,FALSE
+2024-04-21,Work Lunch,85.72,,FALSE,FALSE
+2024-04-22,Work Lunch,16.00,Rounded True,TRUE,FALSE
+2024-04-23,Work Lunch,7.25,,FALSE,FALSE
+2024-04-25,Work Lunch,5.90,,FALSE,FALSE
+2024-04-25,Work Dinner Deliveroo,17.20,,FALSE,FALSE
+2024-04-25,Cogs from Amazon,16.99,,FALSE,FALSE
+2024-04-26,Work Lunch Deliveroo,14.21,,FALSE,FALSE
+2024-04-26,Work Lunch Deliveroo,16.52,,FALSE,FALSE
+2024-04-26,Work Dinner Deliveroo,25.61,,FALSE,FALSE
+2024-04-28,Work Lunch Deliveroo,58.95,Weekend,TRUE,FALSE
+2024-04-28,Laderach Gift to Client,13.76,Weekend,TRUE,FALSE
+2024-04-29,Cogs from Amazon,31.93,,FALSE,FALSE
+2024-04-29,Work Lunch Deliveroo,21.14,,FALSE,FALSE
+2024-05-03,Work Lunch Deliveroo,16.71,,FALSE,FALSE
+2024-05-06,Work Lunch Deliveroo,17.69,,FALSE,FALSE
+2024-05-10,Work Dinner - Entertainment client,96.39,,FALSE,FALSE
+2024-05-10,Coffee,3.50,,FALSE,FALSE
+2024-05-11,Work Lunch Deliveroo,15.53,Weekend,TRUE,FALSE
+2024-05-11,Work Lunch Deliveroo,5.02,Weekend,TRUE,FALSE
+2024-05-15,Work Lunch Deliveroo,16.73,,FALSE,FALSE
+2024-05-21,Work Lunch Deliveroo,14.00,Rounded True,TRUE,FALSE
+2024-05-22,Work Lunch Deliveroo,9.89,,FALSE,FALSE
+2024-05-25,Work Lunch Deliveroo Inviting Guest to Pod,112.94,Weekend Z_score above threshold,TRUE,TRUE
+2024-05-26,Work Lunch Deliveroo,4.48,Weekend,TRUE,FALSE
+2024-05-31,Work Dinner Deliveroo,23.34,,FALSE,FALSE
+2024-06-02,Work  Deliveroo,15.96,Weekend,TRUE,FALSE
+2024-06-02,Work  Deliveroo,16.99,Weekend,TRUE,FALSE
+2024-06-03,Work  Deliveroo,12.94,,FALSE,FALSE
+2024-06-03,Work  Istu,6.75,,FALSE,FALSE
+2024-06-04,Work  Deliveroo,20.52,,FALSE,FALSE
+2024-06-05,Work  Deliveroo,10.48,,FALSE,FALSE
+2024-06-07,Work  Deliveroo,12.42,,FALSE,FALSE
+2024-06-08,Work Deliveroo,51.95,Weekend,TRUE,FALSE
+2024-06-09,Work Lunch Deliveroo,14.15,Weekend,TRUE,FALSE
+2024-06-12,Work Lunch Deliveroo,10.95,,FALSE,FALSE
+2024-06-12,Work Lunch Deliveroo,11.29,,FALSE,FALSE
+2024-06-13,Work Lunch Deliveroo,10.52,,FALSE,FALSE
+2024-06-14,Work Lunch Deliveroo,15.73,,FALSE,FALSE
+2024-06-15,Work Lunch Deliveroo,16.24,Weekend,TRUE,FALSE
+2024-06-17,Work Lunch Deliveroo,17.15,,FALSE,FALSE
+2024-06-21,Work Lunch Deliveroo,13.12,,FALSE,FALSE
+2024-06-22,Work invite podcast guest Soho house,100.00,Rounded True Weekend,TRUE,FALSE
+2024-06-25,Work Lunch Deliveroo,12.97,,FALSE,FALSE
+2024-06-25,Work invite podcast guest Soho house,166.00,Z_score above threshold Rounded True,TRUE,TRUE
+2024-06-26,Work Lunch Deliveroo,20.96,,FALSE,FALSE
+2024-06-26,Work Lunch Laderach,3.17,,FALSE,FALSE
+2024-06-27,Work Lunch Deliveroo,16.92,,FALSE,FALSE
+2024-06-28,Work Lunch Deliveroo,16.76,,FALSE,FALSE
+2024-06-29,Work Lunch Deliveroo,16.19,Weekend,TRUE,FALSE
+2024-06-30,Work Lunch Deliveroo,35.31,Weekend,TRUE,FALSE
+2024-07-04,Work Lunch Deliveroo,17.81,,FALSE,FALSE
+2024-07-06,Work Lunch Deliveroo,25.20,Weekend,TRUE,FALSE
+2024-07-08,Work Lunch Deliveroo,4.88,,FALSE,FALSE
+2024-07-09,Work Lunch Deliveroo,9.15,,FALSE,FALSE
+2024-07-11,Work Lunch Deliveroo,18.02,,FALSE,FALSE
+2024-07-12,Big Client Potential,412.54,Z_score above threshold,TRUE,TRUE
+2024-07-12,Work Lunch Deliveroo,34.59,,FALSE,FALSE
+2024-07-13,Work Dinner Deliveroo,20.92,Weekend,TRUE,FALSE
+2024-07-13,Work Lunch Deliveroo,22.58,Weekend,TRUE,FALSE
+2024-07-14,Work Lunch Deliveroo,10.12,Weekend,TRUE,FALSE
+2024-07-16,Work Lunch Deliveroo,20.99,,FALSE,FALSE
+2024-07-20,Work Lunch Deliveroo,29.71,Weekend,TRUE,FALSE
+2024-08-19,Itsu Lunch,6.75,,FALSE,FALSE
+2024-08-21,Soho Home Coffee with Omar,11.50,,FALSE,FALSE
+2024-08-25,Deliveroo Lunch,10.75,Weekend,TRUE,FALSE
+2024-08-26,JJ Lunch,9.60,,FALSE,FALSE
+2024-08-27,Deliveroo Lunch,14.99,,FALSE,FALSE
+2024-08-30,Client Meeting,124.00,Z_score above threshold Rounded True,TRUE,TRUE
+2024-08-30,Snack from Harrods,6.06,,FALSE,FALSE
+2024-08-30,Lunch,24.15,,FALSE,FALSE
+2024-09-01,Lunch - Lions Prep,2.82,Weekend,TRUE,FALSE
+2024-09-01,Lunch at Itsu,11.93,Weekend,TRUE,FALSE
+2024-09-01,Deliveroo,15.58,Weekend,TRUE,FALSE
+2024-09-04,Lunch at Deliveroo,14.95,,FALSE,FALSE
+2024-09-05,Lunch at Deliveroo,15.39,,FALSE,FALSE
+2024-09-06,Lunch at Itsu,6.75,,FALSE,FALSE
+2024-09-06,Lunch at UberEats,16.43,,FALSE,FALSE
+2024-09-07,Lunch at Itsu,8.15,Weekend,TRUE,FALSE
+2024-09-09,Lunch at Itsu,6.25,,FALSE,FALSE
+2024-09-11,Lunch at Itsu,6.75,,FALSE,FALSE
+2024-09-11,Lunch at Itsu,6.75,,FALSE,FALSE
+2024-09-11,Breakfast Deliveoo,14.53,,FALSE,FALSE
+2024-09-12,Lunch Deliveoo,42.49,,FALSE,FALSE
+2024-09-13,Lunch Deliveoo,19.82,,FALSE,FALSE
+2024-09-14,Lunch Itsu,6.25,Weekend,TRUE,FALSE
+2024-09-15,Business Meal for Podcast,108.57,Weekend Z_score above threshold,TRUE,TRUE
+2024-09-15,Ladure snack,3.50,Weekend,TRUE,FALSE
+2024-09-17,Lunch Itsu,6.25,,FALSE,FALSE
+2024-09-17,Breakfast Deliveroo,16.55,,FALSE,FALSE
+2024-09-20,Lunch Itsu,13.50,,FALSE,FALSE
+2024-09-21,Soho House Invite,50.00,Rounded True,TRUE,FALSE
+2024-09-23,Joe & Juice,8.00,Rounded True,TRUE,FALSE
+2024-09-23,Itsu,6.75,,FALSE,FALSE
+2024-09-23,Deliveroo,34.99,,FALSE,FALSE
+2024-09-24,Deliveroo,10.62,,FALSE,FALSE
+2024-09-25,Lunch Itsu,8.15,,FALSE,FALSE
+2024-09-27,Lunch Itsu,8.15,,FALSE,FALSE
+2024-09-27,Deliveroo,17.80,,FALSE,FALSE
+2024-10-02,Lunch Itsu,8.15,,FALSE,FALSE
+2024-10-03,Deliveroo,32.09,,FALSE,FALSE
+2024-10-03,Lunch at Selfridges,24.99,,FALSE,FALSE
+2024-10-04,Deliveroo,31.88,,FALSE,FALSE
+2024-10-05,Deliveroo,13.97,Weekend,TRUE,FALSE
+2024-10-07,Lunch at Itsu,6.75,,FALSE,FALSE
+2024-10-09,Lunch at Waitrose,5.80,,FALSE,FALSE
+2024-10-09,Deliveroo breakfast,32.46,,FALSE,FALSE
+2024-10-10,Lunch at Itsu,17.49,,FALSE,FALSE
+2024-10-10,Paul breakfast,4.25,,FALSE,FALSE
+2024-10-11,Paul breakfast,3.00,Rounded True,TRUE,FALSE
+2024-10-11,Harrods Lunch,13.00,Rounded True,TRUE,FALSE
+2024-10-11,Inviting Podcast Guest (5 Guys),71.00,Rounded True,TRUE,FALSE
+2024-10-12,French bakery breakfast inviting Alex,13.95,Weekend,TRUE,FALSE
+2024-10-15,Itsu,6.75,,FALSE,FALSE
+2024-10-18,Itsu - Paul (Breakfast Lunch),9.35,,FALSE,FALSE
+2024-10-19,Meraki Podcast Guest,75.00,Rounded True Weekend,TRUE,FALSE
+2024-10-19,Deliveroo Breakfast,2.09,Weekend,TRUE,FALSE
+2024-10-21,Deliveroo Lunch,14.49,,FALSE,FALSE
+2024-10-23,Deliveroo Lunch,20.96,,FALSE,FALSE
+2024-10-24,Itsu lunch,6.75,,FALSE,FALSE
+2024-10-25,Deliveroo Lunch,22.52,,FALSE,FALSE
+2024-10-26,Deliveroo breakfast,13.14,Weekend,TRUE,FALSE
+2024-10-26,Deliveroo Lunch,16.49,Weekend,TRUE,FALSE
+2024-10-27,Deliveroo breakfast,9.94,Weekend,TRUE,FALSE
+2024-11-01,Coffee - Roasting Party,3.30,,FALSE,FALSE
+2024-11-01,Deliveroo breakfast,16.55,,FALSE,FALSE
+2024-11-01,Deliveroo lunch,41.49,,FALSE,FALSE
+2024-11-02,The Orange,24.23,Weekend,TRUE,FALSE
+2024-11-03,Paul,2.60,Weekend,TRUE,FALSE
+2024-11-03,Knoops,5.60,Weekend,TRUE,FALSE
+2024-11-07,Paul,2.60,,FALSE,FALSE
+2024-11-07,Deliveroo x 2,32.43,,FALSE,FALSE
+2024-11-08,Paul,3.00,Rounded True,TRUE,FALSE
+2024-11-08,Deliveroo,44.04,,FALSE,FALSE
+2024-11-08,Meraki Guest Invite,162.00,Z_score above threshold Rounded True,TRUE,TRUE
+2024-11-09,Vita Coffee Shop,21.90,Weekend,TRUE,FALSE
+2024-11-10,Itsu lunch,2.95,Weekend,TRUE,FALSE
+2024-11-10,Gordon Ramsey,14.33,Weekend,TRUE,FALSE
+2024-11-11,Deliveroo,45.93,,FALSE,FALSE
+2024-11-12,Paul,3.95,,FALSE,FALSE
+2024-11-12,Deliveroo,44.84,,FALSE,FALSE
+2024-11-14,Paul,4.25,,FALSE,FALSE
+2024-11-14,Itsu lunch,6.95,,FALSE,FALSE
+2024-11-15,Uber Eats,35.93,,FALSE,FALSE
+2024-11-15,Itsu lunch,6.75,,FALSE,FALSE
+2024-11-16,Ronis Bakery lunch,20.50,Weekend,TRUE,FALSE
+2024-11-17,Laduree,6.70,Weekend,TRUE,FALSE
+2024-11-18,Paul,3.95,,FALSE,FALSE
+2024-11-20,Vita Coffee,4.90,,FALSE,FALSE
+2024-11-20,Deliveroo,5.32,,FALSE,FALSE
+2024-11-20,Blank Street Coffee,12.60,,FALSE,FALSE
+2024-11-20,Partridges,5.98,,FALSE,FALSE
+2024-11-20,Itsu,9.90,,FALSE,FALSE
+2024-11-23,Itsu,1.99,Weekend,TRUE,FALSE
+2024-11-23,Itsu,4.94,Weekend,TRUE,FALSE
+2024-11-25,Itsu,2.95,,FALSE,FALSE
+2024-11-25,Lionsprep,35.90,,FALSE,FALSE
+2024-11-26,Deliveroo,21.77,,FALSE,FALSE
+2024-11-26,Deliveroo,13.97,,FALSE,FALSE
+2024-11-27,Itsu,8.94,,FALSE,FALSE
+2024-11-28,Itsu,2.94,,FALSE,FALSE
+2024-11-28,Coffee,3.95,,FALSE,FALSE
+2024-11-30,Deliveroo,2.97,Weekend,TRUE,FALSE
+2024-11-30,UberEats,11.17,Weekend,TRUE,FALSE
+2024-12-01,Venchi,10.00,Rounded True,TRUE,FALSE
+2024-12-02,Paul,3.00,Rounded True,TRUE,FALSE
+2024-12-03,Bleecker -  Invite Client,26.55,,FALSE,FALSE
+2024-12-03,Itsu,9.90,,FALSE,FALSE
+2024-12-03,Vita -  Invite Client,18.60,,FALSE,FALSE
+2024-12-05,Deliveroo,24.31,,FALSE,FALSE
+2024-12-06,Deliveroo,20.64,,FALSE,FALSE
+2024-12-06,SnS -  Invite Client,31.39,,FALSE,FALSE
+2024-12-08,Pret,7.30,Weekend,TRUE,FALSE
+2024-12-12,Deliveroo,13.99,,FALSE,FALSE
+2024-12-13,Deliveroo,16.71,,FALSE,FALSE
+2024-12-13,Deliveroo,16.19,,FALSE,FALSE
+2024-12-14,SnS -  Invite Client,77.89,Weekend,TRUE,FALSE
+2024-12-16,Itsu,9.90,,FALSE,FALSE
+2024-12-16,Lunch,21.34,,FALSE,FALSE
+2024-12-16,Deliveroo,14.99,,FALSE,FALSE
+2024-12-17,Deliveroo,16.49,,FALSE,FALSE
+2024-12-19,Deliveroo,10.70,,FALSE,FALSE
+2024-12-20,Deliveroo,20.14,,FALSE,FALSE
+2024-12-22,Deliveroo,26.49,Weekend,TRUE,FALSE
+2024-12-28,Deliveroo,23.52,Weekend,TRUE,FALSE
+2024-12-28,Deliveroo,18.45,Weekend,TRUE,FALSE
+2024-12-29,Deliveroo,13.34,Weekend,TRUE,FALSE
+2024-12-30,Itsu,9.90,,FALSE,FALSE

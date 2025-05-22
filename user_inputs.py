@@ -27,7 +27,7 @@ def user_inputs():
     
 
     with st.form("user_form"): 
-        submitted = st.form_submit_button("➡️ View Stats")   
+        submitted = st.form_submit_button("➡️ To Analytical Statistics")   
 
         # Test Setup
         st.subheader("🔹 Testing Setup")

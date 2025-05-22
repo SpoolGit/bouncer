@@ -4,7 +4,8 @@ import pandas as pd
 from utils import get_llm_sampling_csv
 
 def display_csv(): 
-    st.markdown("<h1 style='text-align: center;'>📊 Audit Sampling</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>📊 Risk-Based Sampling</h1>", unsafe_allow_html=True)
+    st.subheader("Existence & Occurrence Assertsion")
     st.markdown("---")
 
     if st.session_state.get("page") == "view":
@@ -17,12 +18,12 @@ def display_csv():
     if not isinstance(df, pd.DataFrame) or df.empty:
         st.info("DF not found...")
         df = pd.DataFrame() 
-        if st.button("⬅️ Back to Stats View", key="view_stats_btn_1"):
+        if st.button("⬅️ Back to Analytical Statistics", key="view_stats_btn_1"):
             st.session_state.page = 'stats'
             st.rerun()
         return
     
-    if st.button("📤 Go to Upload Page", key="view_upload_btn_1"):
+    if st.button("📤 Upload Supporting Docs", key="view_upload_btn_1"):
         st.session_state.page = 'upload'
         st.rerun()
         
@@ -47,10 +48,10 @@ def display_csv():
     )
     
     # Back button to go to stats
-    if st.button("⬅️ Back to Stats View"):
+    if st.button("⬅️ Back to Analytical Statistics"):
         st.session_state.page = 'stats'
         st.rerun()
-    if st.button("📤 Go to Upload Page"):
+    if st.button("📤 Upload Supporting Docs"):
         flag = True;
         st.session_state.page = 'upload'
         st.rerun()

@@ -1,0 +1,6 @@
+﻿ACCOUNT NUMBER,DATE,DESCRIPTION,DEBIT (In Business Currency),CREDIT (In Business Currency),BALANCE (In Business Currency)
+,01/01/2022,Starting Balance,,,£0.00
+,17/03/2022,Joe & Juice,£5.90,,£5.90
+,05/05/2022,Meeting Ivan,£14.13,,£20.03
+,10/05/2022,Deliveroo,£17.19,,£37.22
+,05/12/2022,Office Invitation,£71.24,,£108.46

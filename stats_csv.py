@@ -7,7 +7,8 @@ import seaborn as sns
 import numpy as np
 
 def display_stats():
-    st.markdown("<h1 style='text-align: center;'>📈 Audit Stats Overview</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>📈 Analytical Statistics Overview</h1>", unsafe_allow_html=True)
+    st.subheader("Completeness & Accuracy Assertsion")
     st.markdown("---")
     
     df = get_stats_csv()
@@ -19,7 +20,7 @@ def display_stats():
             st.rerun()
         return
         
-    if st.button("➡️ View Risk Sampling", key="view_risk_btn_1"):
+    if st.button("➡️ Perform Risk-Based Sampling", key="view_risk_btn_1"):
         st.session_state.page = 'view'
         st.rerun()
         
@@ -137,6 +138,6 @@ def display_stats():
     if st.button("⬅️ Back to User Inputs"):
         st.session_state.page = 'userip'
         st.rerun()
-    if st.button("➡️ View Risk Sampling"):
+    if st.button("➡️ Perform Risk-Based Sampling"):
         st.session_state.page = 'view'
         st.rerun()
