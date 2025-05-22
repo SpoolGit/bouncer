@@ -622,9 +622,16 @@ def get_assertOccurrence_LLM (desc:str, date: str, row_key:str):
 
     #st.success(f"📁 Found {len(uploaded_files)} uploaded file(s):")
     complete_invoices_string = ""
+    case_one = True
     for i, file in enumerate(uploaded_files, start=1):
         complete_invoices_string += f"Invoice no. {i} below:\n\n"
-        complete_invoices_string += f"file name: {file.name}\n\n"
+        complete_invoices_string += f"file name: {file.name}\n\n" 
+        #any chagne realted to case_one is just for Demo, later on remove it
+        if "80" in file.name:
+            case_one = True
+        else:
+            case_one = False;
+            
         file_type = file.type
 
         if "pdf" in file_type.lower():
@@ -660,7 +667,10 @@ def get_assertOccurrence_LLM (desc:str, date: str, row_key:str):
     ##print(final_prompt)
     if isDummy == True: 
         time.sleep(2) 
-        json_path = "outputs/assertOcc_fail.json"  
+        if case_one:    
+            json_path = "outputs/assertOcc_success2.json" 
+        else:
+            json_path = "outputs/assertOcc_fail.json" 
         
         # Step 1: Read JSON file
         with open(json_path, "r") as f:

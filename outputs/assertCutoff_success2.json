@@ -1,0 +1,12 @@
+{
+  "invoice_date_checks": [
+    {
+      "file_name": "Invoice_80_2025-01-18.pdf",
+      "extracted_invoice_date": "2025-01-11",
+      "does_invoice_date_match_exact": true,
+      "is_same_month": true,
+      "is_cutoff_issue": false,
+      "cutoff_issue_description": null
+    }
+  ]
+}
