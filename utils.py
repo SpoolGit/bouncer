@@ -264,7 +264,23 @@ def get_account_balance_data (file_path):
   #print(output_str)
   return total_balance
   
-  
+import pandas as pd
+
+def safe_parse_dates(series):
+    # Try default (month/day/year)
+    parsed = pd.to_datetime(series, errors='coerce')
+
+    # If too many NaT, try dayfirst
+    if parsed.isna().sum() > len(series) * 0.5:
+        parsed_alt = pd.to_datetime(series, errors='coerce', dayfirst=True)
+
+        # If alt works better, use it
+        if parsed_alt.notna().sum() > parsed.notna().sum():
+            return parsed_alt
+
+    return parsed
+
+
 def get_stats_csv ():
     # Get uploaded file from session
     uploaded_file = st.session_state.get("test_gl")
@@ -335,7 +351,8 @@ def get_stats_csv ():
         raise ValueError("No column with 'date' in the name found.")
 
     # Step 2: Parse the date column
-    df[date_col] = pd.to_datetime(df[date_col], dayfirst=True, errors='coerce')  # adjust dayfirst=True/False based on format
+    #df[date_col] = pd.to_datetime(df[date_col], dayfirst=True, errors='coerce')  # adjust dayfirst=True/False based on format
+    df[date_col] = safe_parse_dates(df[date_col])
 
     # Step 3: Add Weekend column (Saturday=5, Sunday=6)
     df['Weekend'] = df[date_col].dt.weekday >= 5
@@ -363,15 +380,41 @@ def fix_csv_text(csv_text):
     fixed_lines.append(header)
 
     for line in lines[1:]:
-        parts = line.split(',')
-        if len(parts) > 6:
-            # Fixing by assuming 4th field may contain commas
-            fixed_line = ','.join(parts[:3] + ['"' + ','.join(parts[3:-2]).strip() + '"'] + parts[-2:])
-            fixed_lines.append(fixed_line)
-        else:
+        # Step 1: Check and fix mismatched quotes
+        quote_count = line.count('"')
+        if quote_count % 2 != 0:
+            # If odd number of quotes, add a closing quote at the end
+            line += '"'
+
+        # Step 2: Split into parts carefully
+        parts = re.split(r',(?=(?:[^"]*"[^"]*")*[^"]*$)', line)
+        # This regex splits on commas **only outside quotes**
+
+        # Step 3: Check if we have expected number of fields
+        if len(parts) < 6:
             fixed_lines.append(line)
+            continue
+
+        # Step 4: Safely reconstruct the line:
+        date = parts[0].strip()
+        description = parts[1].strip()
+        amount = parts[2].strip()
+        anomaly_flags = parts[3].strip()
+        is_high_risk = parts[4].strip()
+        is_selected = parts[5].strip()
+
+        # Step 5: Ensure DESCRIPTION is quoted and clean
+        if ',' in description or '"' in description:
+            # Escape inner quotes
+            description = description.replace('"', '""')
+            description = f'"{description}"'
+
+        # Step 6: Reassemble the line
+        fixed_line = f"{date},{description},{amount},{anomaly_flags},{is_high_risk},{is_selected}"
+        fixed_lines.append(fixed_line)
+
     return '\n'.join(fixed_lines)
-    
+   
 def get_llm_sampling_csv ():
     
     try:
@@ -410,9 +453,9 @@ def get_llm_sampling_csv ():
         select propoer amount of transactions for sampling  
 
         Return the result as a CSV table with these columns:
-        - DATE
-        - DESCRIPTION
-        - AMOUNT
+        - DATE:   
+        - DESCRIPTION:  
+        - AMOUNT:  
         - Anomaly Flags (reasons why flagged, DO NOT USE COMMA HERE)
         - Is High Risk? (TRUE/FALSE, based on combination of red flags)
         - Is selected for Sampling (TRUE/FALSE)
@@ -420,6 +463,10 @@ def get_llm_sampling_csv ():
         Do not hallucinate data. Only use what is present. If a rule can’t be applied (e.g., timestamp not available), skip it.
 
         Output ONLY the final result as CSV.
+        IMPORTANT: When generating CSV, ensure:
+        - All DESCRIPTION fields with commas are enclosed in double quotes.
+        - Any DESCRIPTION or text field containing double quotes must have the internal quotes escaped as two double quotes ("").
+        - Follow strict CSV format to ensure parsers can read it without errors.
 
 
         Here is the data:
@@ -452,7 +499,8 @@ def get_llm_sampling_csv ():
             time.sleep(2) 
             #csv_path = "outputs/Meals 2024_sampling_out.csv"  
             #df_llm = pd.read_csv(csv_path) 
-            csv_path = "outputs/Radwanium Account Transactions 2025-04-28-13_09_sampling_out.csv" 
+            #csv_path = "outputs/Radwanium Account Transactions 2025-04-28-13_09_sampling_out.csv" 
+            csv_path = "outputs/Demo GL (Maintenance).xls - SST GL_samplingByLLM.csv" 
             df_llm = pd.read_csv(csv_path)
         else: 
             ## Call OpenAI's API
@@ -462,12 +510,14 @@ def get_llm_sampling_csv ():
                 temperature=0,
             )
             stage1_response_message = chat_completion.choices[0].message.content
+            #st.info(stage1_response_message)
             fixed_csv = fix_csv_text(stage1_response_message)
+            #st.info(fixed_csv)
             df_llm = pd.read_csv(StringIO(fixed_csv))
+            #st.info("GOT DF..")
         
         
         #st.session_state["sampling_LLM_df"] = df_llm
-        ##st.info(stage1_response_message)
         return df_llm
         #print("Response: ", stage1_response_message)
     

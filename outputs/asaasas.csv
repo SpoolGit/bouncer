@@ -1,0 +1,30 @@
+﻿,DATE,DESCRIPTION,AMOUNT,Anomaly Flags,Is High Risk?,Is selected for Sampling
+0,2023-01-03,EPE -UPS Maintenance Renewal contract about 2023,25308000,,false,false
+1,2023-01-03,INV: 00002 GREEN TALK - Maitenance for plants for year 2023,30400000,,false,false
+2,2023-01-03,Resco - contract 2023 - as per SOA no invoice,27417000,,false,false
+3,2023-01-25,PC 104 - Auto khaled - crone rental for elevating of rolling shufter F3,5130000,,false,false
+4,2023-01-25,PC 104 - maitenance hob at F3,950000,,false,false
+5,2023-02-01,PC 105 - Elie Halabi / Floor Heating F3,6300000,,false,false
+6,2023-02-01,PC 105 - Time sheet cleaning penthohouse+Elie Halabi / Floor Heating F3,1260000,,false,false
+7,2023-02-21,INV : 1760 -,9303000,,false,false
+8,2023-03-10,Inv : 23/2023Cool Energy plus Repair of hood PCB for 3rd floor appartment,7310000,,false,false
+9,2023-03-10,INV:84 -97-98-99-100 ALUTAB 76-676917 ,479901500,Z_score above threshold,true,true
+10,2023-04-06,pmt cash to Wahib Darwish as per SOA MAK- No doc,25230000,,false,false
+11,2023-08-24,PC 119 maintenance door handle of dryer F6,2137500,,false,false
+12,2023-09-06,PC 120 - Auto khaled F1,17527500,,false,false
+13,2023-09-06,PC 120 Cleaning,6412500,,false,false
+14,2023-09-08,ETS. JARJOUR - 24 stores enrouleurs manuels + tissus sunscreen,265734000,,false,false
+15,2023-09-11,Chady tabet Inv: 97 & 98 ,828067500,Z_score above threshold,true,true
+16,2023-09-11,INV: 275 BK ,291811500,,false,false
+17,2023-09-11,INV: 278 -  kitchenette,284715000,,false,false
+18,2023-09-15,Payment to Youness Ammar from MAK CASH,42750000,,false,false
+19,2023-09-18,INV: 2 Stech ceiling -,17100000,,false,false
+20,2023-09-21,LEMCO INV: SA 6925,18981000,,false,false
+21,2023-09-21,PC : 121 EWH / F1,17100000,,false,false
+22,2023-09-28,INV : 81 MOHAMAD MADHOUN -,35055000,,false,false
+23,2023-09-29,3593,85072500,,false,false
+24,2023-10-05,INV : 4 Chady Tabet ,347130000,,false,false
+25,2023-10-06,PC 122 silikon pu,940500,,false,false
+26,2023-11-16,INV: 1350 SARA - GHROHI,17004642,,false,false
+27,2023-11-29,PC: 126 CRONE RENTAL F1 - REPAIR SHUTTER,17100000,,false,false
+28,2023-12-21,INV Fres khZEN - Desinesctisation (cafard mites fourmis,22375000,,false,false

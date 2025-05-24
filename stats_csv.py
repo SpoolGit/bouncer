@@ -7,11 +7,23 @@ import seaborn as sns
 import numpy as np
 
 def display_stats():
+
+    def get_column_case_insensitive(df, target_name):
+        for col in df.columns:
+            if col.strip().lower() == target_name.lower():
+                return col
+        raise KeyError(f"Column '{target_name}' not found")
+    
     st.markdown("<h1 style='text-align: center;'>📈 Analytical Statistics Overview</h1>", unsafe_allow_html=True)
     st.subheader("Completeness & Accuracy Assertsion")
     st.markdown("---")
     
     df = get_stats_csv()
+    #df.columns = df.columns.str.upper()
+    #st.dataframe(df, use_container_width=True)
+
+    date_col = get_column_case_insensitive(df, 'DATE')
+    df[date_col] = pd.to_datetime(df[date_col], errors='coerce')
     
     if df.empty:
         st.warning("⚠️ Please upload a valid file to continue.")        
@@ -25,7 +37,7 @@ def display_stats():
         st.rerun()
         
     #df = pd.read_csv("outputs/Statisctics_out.csv")
-
+    
     # ---------- CLUSTERING SUMMARY ----------
     st.subheader("📊 K-Means Clustering Summary")
     cluster_summary = df.groupby('K_means Lable')['Amount'].agg(['mean', 'count']).reset_index()
@@ -73,7 +85,7 @@ def display_stats():
         ["Holiday Transactions", df['Holiday'].sum(), "Unusual unless specifically allowed."],
         ["Even-Dollar Amounts", df['EvenDollar'].sum(), "Small, but worth noting in manual reviews."],
         ["Unusual Precision (non-typical decimals)", (df['Precision'] > 0).sum(), "Could indicate system-generated or unusually precise values."],
-        ["Month-End Transactions", df[df['DATE'].dt.is_month_end].shape[0], "Month-end spikes could reflect accruals or adjustments."]
+        ["Month-End Transactions", df[df[date_col].dt.is_month_end].shape[0], "Month-end spikes could reflect accruals or adjustments."]
     ], columns=["Pattern", "Count", "Notes"])
 
     st.table(unusual_summary)
