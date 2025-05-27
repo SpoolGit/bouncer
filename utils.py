@@ -76,8 +76,8 @@ def extract_text_from_csv(uploaded_file_path):
     except Exception as e:
         return f"Error reading CSV: {e}"
 
-def extract_text_from_csv_from_session(row_key: str):
-    uploaded_files = st.session_state.get(f"uploaded_{row_key}", [])
+def extract_text_from_csv_from_session(session_var_name: str):
+    uploaded_files = st.session_state.get(session_var_name, [])
     if not uploaded_files:
         return "⚠️ No uploaded files found for this row."
 
@@ -111,7 +111,6 @@ def extract_text_from_csv_from_session(row_key: str):
     except Exception as e:
         return f"❌ Error reading CSV(s): {e}"
 
-
 def extract_text_from_pdf(pdf_file_path):
     try:
         all_text = ""
@@ -124,8 +123,8 @@ def extract_text_from_pdf(pdf_file_path):
     except Exception as e:
         return f"Error reading PDF: {e}"
 
-def extract_text_from_pdf_from_session(row_key: str):
-    uploaded_files = st.session_state.get(f"uploaded_{row_key}", [])
+def extract_text_from_pdf_from_session(session_var_name: str):
+    uploaded_files = st.session_state.get(session_var_name, [])
     if not uploaded_files:
         return "⚠️ No uploaded files found for this row."
 
@@ -264,7 +263,6 @@ def get_account_balance_data (file_path):
   #print(output_str)
   return total_balance
   
-import pandas as pd
 
 def safe_parse_dates(series):
     # Try default (month/day/year)
@@ -525,9 +523,6 @@ def get_llm_sampling_csv ():
         st.error(f"🚫 Error reading stats file: {e}")
         return pd.DataFrame()
         
-import pandas as pd
-import streamlit as st
-
 def get_GLEntry_fromCSV(uploaded_file, desc: str, date: str):
     if uploaded_file is None:
         st.warning("⚠️ No GL file uploaded.")
@@ -570,7 +565,6 @@ def get_GLEntry_fromCSV(uploaded_file, desc: str, date: str):
     except Exception as e:
         st.error(f"❌ Error processing file: {e}")
         return pd.DataFrame()
-
         
 def get_assertOccurrence_LLM (desc:str, date: str, row_key:str):
     
@@ -683,14 +677,14 @@ def get_assertOccurrence_LLM (desc:str, date: str, row_key:str):
             case_one = False;
             
         file_type = file.type
-
+        session_var_name = f"uploaded_{row_key}"
         if "pdf" in file_type.lower():
-            pdf_text = extract_text_from_pdf_from_session(row_key)
+            pdf_text = extract_text_from_pdf_from_session(session_var_name)
             complete_invoices_string += pdf_text + "\n\n"
             #st.text_area("📄 Extracted PDF Text", pdf_text, height=300)
 
         if "csv" in file_type.lower():
-            csv_text = extract_text_from_csv_from_session(row_key)
+            csv_text = extract_text_from_csv_from_session(session_var_name)
             complete_invoices_string += csv_text + "\n\n"
             #st.text_area("📄 Extracted CSV Content", csv_text, height=300)
             
@@ -857,14 +851,14 @@ def get_assertCutoff_LLM (desc:str, date: str, row_key:str):
         complete_invoices_string += f"Invoice no. {i} below:\n\n"
         complete_invoices_string += f"file name: {file.name}\n\n"
         file_type = file.type
-
+        session_var_name = f"uploaded_{row_key}"
         if "pdf" in file_type.lower():
-            pdf_text = extract_text_from_pdf_from_session(row_key)
+            pdf_text = extract_text_from_pdf_from_session(session_var_name)
             complete_invoices_string += pdf_text + "\n\n"
             #st.text_area("📄 Extracted PDF Text", pdf_text, height=300)
 
         if "csv" in file_type.lower():
-            csv_text = extract_text_from_csv_from_session(row_key)
+            csv_text = extract_text_from_csv_from_session(session_var_name)
             complete_invoices_string += csv_text + "\n\n"
             #st.text_area("📄 Extracted CSV Content", csv_text, height=300)
             
@@ -963,3 +957,44 @@ def get_assertCutoff_LLM (desc:str, date: str, row_key:str):
     st.session_state[f"llm_assertCutoff_df_{row_key}"] = df_combined
     #st.text_area("📄 Extracted CSV Content", df_llm, height=300)
     
+
+
+
+def get_assertClassification_statsScreen_LLM ():
+    GL_text = extract_text_from_csv_from_session("")
+    
+    LLM_prompt = """
+    """
+            
+    final_prompt = LLM_prompt.replace('{{GL_text}}', GL_text)
+    
+    #st.text_area("📄 Extracted CSV Content", final_prompt, height=300)
+    
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]  
+    isDummy = st.secrets["Dummy"]
+
+    client = openai.OpenAI(api_key=OPENAI_API_KEY)
+
+    messages_1 = [
+        {
+            "role": "system",
+            "content": "You are a financial data reconciliation and audit assertiosn expert.",
+        },
+        {
+            "role": "user",
+            "content": final_prompt,
+        },
+    ]
+    
+    if isDummy == True: 
+        time.sleep(2) 
+        file_path = "outputs/assertCutoff_success.json" 
+    else:
+        ## Call OpenAI's API
+        chat_completion = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=messages_1,
+            temperature=0,
+        )
+        stage1_response_message = chat_completion.choices[0].message.content
+        st.text_area("📄 LLM reply", stage1_response_message, height=300)

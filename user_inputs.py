@@ -23,6 +23,15 @@ def user_inputs():
     </div>
     """, unsafe_allow_html=True)
     
+    # Add Download Template button just below the warning
+    with open("data/template.csv", "rb") as file:
+        st.download_button(
+            label="📥 Download CSV Template",
+            data=file,
+            file_name="template.csv",
+            mime="text/csv"
+        )
+        
     st.title("Please add below inputs")
     
 

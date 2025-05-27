@@ -5,6 +5,7 @@ from stats_csv import display_stats
 from sampling_upload import display_sampling_upload
 from user_inputs import user_inputs
 from assert_verdict import show_assert_verdict
+from sign_in import show_sign_in
 
 # Page config
 st.set_page_config(page_title="Audit CSV App", layout="wide")
@@ -15,16 +16,7 @@ if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
 if not st.session_state.authenticated:
-    st.title("🔐 Login Required")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-
-    if st.button("Login"):
-        if username in allowed_users and allowed_users[username] == password:
-            st.session_state.authenticated = True
-            st.rerun()
-        else:
-            st.error("❌ Invalid username or password")
+    show_sign_in()
     st.stop()
 
 # Navigation using session state
