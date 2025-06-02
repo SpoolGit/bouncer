@@ -44,15 +44,15 @@ def user_inputs():
         testing_year = st.text_input("Which Year Are you Testing?", value=st.session_state.get("testing_year", ""))
         
         # Testing Year
-        st.subheader(f"📌 Testing Year {testing_year}")
+        st.subheader(f"📌 Testing Year info")
         col3, col4 = st.columns(2)
         with col3:
-            test_headcount = st.text_input(f"Total Headcount ({testing_year})", value=st.session_state.get("test_headcount", ""))
-            test_opex = st.text_input(f"Operating Expenses ({testing_year})", value=st.session_state.get("test_opex", ""))
+            test_headcount = st.text_input(f"Total Headcount", value=st.session_state.get("test_headcount", ""))
+            test_opex = st.text_input(f"Operating Expenses", value=st.session_state.get("test_opex", ""))
         with col4:
-            test_revenue = st.text_input(f"Revenue ({testing_year})", value=st.session_state.get("test_revenue", ""))
+            test_revenue = st.text_input(f"Revenue", value=st.session_state.get("test_revenue", ""))
             test_gl = st.file_uploader(
-                f"Upload GL File for {account_y}", 
+                f"Upload GL File for given account", 
                 type=["csv", "xlsx"], 
                 key="test_gl_upload"
             )
@@ -94,7 +94,7 @@ def user_inputs():
 
 
 
-        #submitted = st.form_submit_button("➡️ View Stats")
+        #submitted = st.form_submit_button("➡️ To Analytical Statistics")
 
         if submitted:
             # Store everything in session
@@ -108,6 +108,12 @@ def user_inputs():
             st.session_state.test_headcount = test_headcount
             st.session_state.test_opex = test_opex
             st.session_state.test_revenue = test_revenue
+            
+            
+            if test_gl is None:
+                st.error("Please upload the GL file before proceeding.")
+                return  # Stop further execution
+                
             st.session_state.test_gl = test_gl
 
             for i in range(num_compare):
@@ -115,6 +121,6 @@ def user_inputs():
                 st.session_state[f"compare_opex_{i}"] = compare_data[i]['opex']
                 st.session_state[f"compare_revenue_{i}"] = compare_data[i]['revenue']
                 st.session_state[f"compare_gl_{i}"] = compare_data[i]['gl']
-
+            
             st.session_state.page = 'stats'
             st.rerun()
